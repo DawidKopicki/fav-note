@@ -2,10 +2,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import Button from 'components/atoms/Button/Button';
 import GlobalStyle from 'theme/GlobalStyle';
-
-const theme = {
-  primary: 'black',
-};
+import { theme } from 'theme/mainTheme';
 
 const Root = () => (
   <div>
@@ -13,7 +10,7 @@ const Root = () => (
     <ThemeProvider theme={theme}>
       <>
         <h1>Hello World!</h1>
-        <Button width="240px">Close / Save</Button>
+        <Button>Close / Save</Button>
         <Button secondary>Remove</Button>
       </>
     </ThemeProvider>

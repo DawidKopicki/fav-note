@@ -21,28 +21,28 @@ const InnerWrapper = styled.div`
   position: relative;
   padding: 17px 30px;
   background-color: ${({ activeColor, theme }) => (activeColor ? theme[activeColor] : 'white')};
-  
+
   :first-of-type {
     z-index: 9999;
   }
 
-  :fir${({ flex }) =>
+  ${({ flex }) =>
     flex &&
     css`
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-    `} ;
+    `}
 `;
 
 const DateInfo = styled(Paragraph)`
-  margin: 0 0 10px;
+  margin: 0 0 5px;
   font-weight: ${({ theme }) => theme.bold};
   font-size: ${({ theme }) => theme.fontSize.xs};
 `;
 
 const StyledHeading = styled(Heading)`
-  margin: 10px 0 0;
+  margin: 5px 0 0;
 `;
 
 const StyledAvatar = styled.img`
@@ -81,9 +81,8 @@ class Card extends Component {
     const { redirect } = this.state;
 
     if (redirect) {
-      return <Redirect to={`${cardType}/${id}`} />;
+      return <Redirect to={`${cardType}/details/${id}`} />;
     }
-
     return (
       <StyledWrapper onClick={this.handleCardClick}>
         <InnerWrapper activeColor={cardType}>
